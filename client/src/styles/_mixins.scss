@@ -1,0 +1,10 @@
+@mixin flex ($align, $justify) {
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+@mixin WxH ($width, $height) {
+    width: $width;
+    height: $height;
+}

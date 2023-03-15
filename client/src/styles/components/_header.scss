@@ -1,0 +1,75 @@
+.headerContainer {
+    @include flex(center, space-between);
+    @include WxH(100%, 103px);
+    padding: 0 110px;
+    background: #FFFDFD;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.17);
+}
+
+.headerLogo {
+    @include WxH(148px, 69px);
+    flex: 2;
+}
+
+.headerLinks {
+    @include flex(center, space-between);
+    gap: 50px;
+    flex: 8;
+}
+
+.headerLink {
+    font-weight: 700;
+    line-height: 16px;
+    color: $itvp-grey;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.headerBurger {
+    @include flex(center, center);
+    @include WxH(103px, 103px);
+    flex-direction: column;
+    position: relative;
+    background: #F1F1F1;
+    cursor: pointer;
+}
+
+.headerBurgerRect {
+    @include WxH(35px, 3.52px);
+    position: absolute;
+    background: $itvp-grey;
+    border-radius: 12px;
+}
+
+.headerLoginContainer {
+    @include flex(center, center);
+    flex: 2;
+}
+
+.headerUserLogged {
+    @include flex(center, space-between);
+    gap: 20px;
+}
+
+.headerUserName {
+    font-weight: 400;
+    line-height: 16px;
+    color: $itvp-grey;
+}
+
+.headerUserImg {
+    @include WxH(40px, 40px);
+    border-radius: 50%;
+    background: #C4C4C4;
+}
+
+.headerLoginBtn {
+    @include WxH(143px, 51px);
+    background: $itvp-orange;
+    border-radius: 40px;
+    font-weight: 700;
+    line-height: 16px;
+    text-align: center;
+    color: #FFFFFF;
+    cursor: pointer;
+}

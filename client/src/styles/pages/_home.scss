@@ -1,0 +1,54 @@
+.homeContainer {
+    @include flex(center, center);
+    @include WxH(100vw, calc(100vh - 103px));
+}
+
+.leftContainer {
+    flex: 6;
+}
+
+.leftWrapper {
+    padding: 0 150px;
+}
+
+.leftTextTitle {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 48px;
+    color: $itvp-grey;
+    margin-bottom: 30px;
+}
+
+.leftTextDesc {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 24px;
+    color: $itvp-grey;
+    margin-bottom: 50px;
+}
+
+.leftImportBtn {
+    @include flex(center, center);
+    @include WxH(227px, 62px);
+    gap: 10px;
+    background: $itvp-orange;
+    border-radius: 40px;
+    cursor: pointer;
+}
+
+.uploadIcon {
+    @include WxH(24px, 24px);
+    color: white;
+}
+
+
+.leftImportBtn span {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+
+.rightContainer {
+    flex: 6;
+}

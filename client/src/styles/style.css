@@ -1,0 +1,161 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Proxima Nova", sans-serif;
+  font-style: normal;
+  font-size: 16px;
+}
+
+.homeContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: calc(100vh - 103px);
+}
+
+.leftContainer {
+  flex: 6;
+}
+
+.leftWrapper {
+  padding: 0 150px;
+}
+
+.leftTextTitle {
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 48px;
+  color: #4F4F4F;
+  margin-bottom: 30px;
+}
+
+.leftTextDesc {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 24px;
+  color: #4F4F4F;
+  margin-bottom: 50px;
+}
+
+.leftImportBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 227px;
+  height: 62px;
+  gap: 10px;
+  background: #F2994A;
+  border-radius: 40px;
+  cursor: pointer;
+}
+
+.uploadIcon {
+  width: 24px;
+  height: 24px;
+  color: white;
+}
+
+.leftImportBtn span {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 24px;
+  color: #FFFFFF;
+}
+
+.rightContainer {
+  flex: 6;
+}
+
+.headerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 103px;
+  padding: 0 110px;
+  background: #FFFDFD;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.17);
+}
+
+.headerLogo {
+  width: 148px;
+  height: 69px;
+  flex: 2;
+}
+
+.headerLinks {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  flex: 8;
+}
+
+.headerLink {
+  font-weight: 700;
+  line-height: 16px;
+  color: #4F4F4F;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.headerBurger {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 103px;
+  height: 103px;
+  flex-direction: column;
+  position: relative;
+  background: #F1F1F1;
+  cursor: pointer;
+}
+
+.headerBurgerRect {
+  width: 35px;
+  height: 3.52px;
+  position: absolute;
+  background: #4F4F4F;
+  border-radius: 12px;
+}
+
+.headerLoginContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 2;
+}
+
+.headerUserLogged {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.headerUserName {
+  font-weight: 400;
+  line-height: 16px;
+  color: #4F4F4F;
+}
+
+.headerUserImg {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #C4C4C4;
+}
+
+.headerLoginBtn {
+  width: 143px;
+  height: 51px;
+  background: #F2994A;
+  border-radius: 40px;
+  font-weight: 700;
+  line-height: 16px;
+  text-align: center;
+  color: #FFFFFF;
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */
