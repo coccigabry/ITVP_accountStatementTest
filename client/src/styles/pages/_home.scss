@@ -1,6 +1,7 @@
 .homeContainer {
     @include flex(center, center);
     @include WxH(100vw, calc(100vh - 103px));
+    min-height: 500px;
 }
 
 .leftContainer {
@@ -8,7 +9,7 @@
 }
 
 .leftWrapper {
-    padding: 0 150px;
+    padding: 0 100px;
 }
 
 .leftTextTitle {

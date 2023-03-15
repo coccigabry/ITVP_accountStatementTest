@@ -1,9 +1,10 @@
 .headerContainer {
     @include flex(center, space-between);
     @include WxH(100%, 103px);
-    padding: 0 110px;
+    padding: 0 100px;
     background: #FFFDFD;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.17);
+    z-index: 2;
 }
 
 .headerLogo {

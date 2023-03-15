@@ -1,0 +1,22 @@
+.balanceContainer {
+    @include flex(center, center);
+    @include WxH(100vw, calc(100vh - 103px));
+    min-height: 500px;
+}
+
+.balanceWrapper {
+    padding: 0 100px;
+}
+
+.balanceTitle {
+    font-weight: 500;
+    line-height: 16px;
+    color: #000000;
+    margin-top: 40px;
+    margin-bottom: 25px;
+}
+
+.accountCardContainer {
+    @include flex(center, center);
+    gap: 50px;
+}

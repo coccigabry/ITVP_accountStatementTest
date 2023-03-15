@@ -1,0 +1,45 @@
+.accountCardWrapper {
+    @include WxH(511px, 257px);
+    position: relative;
+    background: #FFFFFF;
+    border: 4px solid $itvp-orange;
+    border-radius: 12px;
+    padding: 30px;
+}
+
+.accountNumber {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 24px;
+    color: $itvp-orange;
+    margin-bottom: 20px;
+}
+
+.accountBalanceContainer {
+    margin-bottom: 25px;
+}
+
+.balanceValue {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 18px;
+    color: $itvp-grey;
+    margin-bottom: 5px;
+}
+
+.balanceAmount {
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 36px;
+    color: $itvp-grey;
+}
+
+.balanceDate {
+    position: absolute;
+    right: 38px;
+    bottom: 44px;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 24px;
+    color: $itvp-grey;
+}
