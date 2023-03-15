@@ -25,3 +25,9 @@
 .specsContainer {
     margin-bottom: 100px;
 }
+
+.ChartsContainer {
+    @include flex(center, flex-start);
+    gap: 35px;
+    margin-bottom: 150px;
+}
