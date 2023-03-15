@@ -1,6 +1,6 @@
 .homeContainer {
     @include flex(center, center);
-    @include WxH(100vw, calc(100vh - 103px));
+    @include WxH(100%, 100%);
     min-height: 500px;
 }
 

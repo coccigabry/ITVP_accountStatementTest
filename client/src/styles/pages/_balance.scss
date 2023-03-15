@@ -1,11 +1,11 @@
 .balanceContainer {
     @include flex(center, center);
-    @include WxH(100vw, calc(100vh - 103px));
+    @include WxH(100%, 100%);
     min-height: 500px;
 }
 
 .balanceWrapper {
-    padding: 0 100px;
+    width: 85%;
 }
 
 .balanceTitle {
@@ -17,6 +17,11 @@
 }
 
 .accountCardContainer {
-    @include flex(center, center);
-    gap: 50px;
+    @include flex(center, flex-start);
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.specsContainer {
+    margin-bottom: 100px;
 }

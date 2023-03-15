@@ -11,8 +11,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100vw;
-  height: calc(100vh - 103px);
+  width: 100%;
+  height: 100%;
   min-height: 500px;
 }
 
@@ -73,13 +73,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100vw;
-  height: calc(100vh - 103px);
+  width: 100%;
+  height: 100%;
   min-height: 500px;
 }
 
 .balanceWrapper {
-  padding: 0 100px;
+  width: 85%;
 }
 
 .balanceTitle {
@@ -93,8 +93,13 @@
 .accountCardContainer {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 50px;
+  justify-content: flex-start;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.specsContainer {
+  margin-bottom: 100px;
 }
 
 .headerContainer {
@@ -230,9 +235,82 @@
 .balanceDate {
   position: absolute;
   right: 38px;
-  bottom: 44px;
+  bottom: 28px;
   font-weight: 500;
   font-size: 24px;
   line-height: 24px;
+  color: #4F4F4F;
+}
+
+.specsWrapper {
+  width: 100%;
+}
+
+.specsHeadRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #F3F3F3;
+  padding: 20px;
+}
+
+.headCol1 {
+  flex: 1;
+}
+
+.headCol2,
+.headCol3,
+.headCol4 {
+  flex: 2;
+}
+
+.headCol5 {
+  flex: 5;
+}
+
+.specsDataRow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid #E0E0E0;
+  padding: 20px;
+}
+
+.dataCol1 {
+  flex: 1;
+  font-weight: 400;
+  line-height: 16px;
+  color: #000000;
+}
+
+.dataCol2,
+.dataCol3,
+.dataCol4 {
+  flex: 2;
+  font-weight: 400;
+  line-height: 16px;
+  color: #4F4F4F;
+}
+
+.dataCol5 {
+  flex: 5;
+}
+
+.printBtn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-weight: 700;
+  line-height: 16px;
+  color: #4F4F4F;
+  gap: 10px;
+  cursor: pointer;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.printIcon {
+  width: 20px;
+  height: 20px;
   color: #4F4F4F;
 }/*# sourceMappingURL=style.css.map */
