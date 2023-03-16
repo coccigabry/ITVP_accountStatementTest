@@ -9,8 +9,10 @@ const AuthProvider = ({ children }) => {
 
     const login = () => setUserLogged(!userLogged)
 
+    const upload = () => setFileImported(!fileImported)
+
     return (
-        <AuthContext.Provider value={{ userLogged, login, fileImported }}>
+        <AuthContext.Provider value={{ userLogged, login, fileImported, upload }}>
             {children}
         </AuthContext.Provider>
     )

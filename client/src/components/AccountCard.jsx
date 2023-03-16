@@ -1,6 +1,7 @@
-import React from 'react'
+
 
 const AccountCard = () => {
+
   return (
     <div className='accountCardWrapper'>
       <h3 className="accountNumber">
