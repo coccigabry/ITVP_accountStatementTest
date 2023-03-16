@@ -10,11 +10,13 @@ const Balance = () => {
   const [data, setData] = useState([])
   const [accountNos, setAccountNos] = useState([])
   const [accountData, setAccountData] = useState([])
+  const [selectedAccount, setSelectedAccount] = useState(null)
 
 
-  const filterOps = (account) => {
+  const handleClick = (account) => {
     const selectedAccountData = data.filter(op => op.Conto === account)
     setAccountData(selectedAccountData)
+    setSelectedAccount(account)
   }
 
   useEffect(() => {
@@ -31,7 +33,10 @@ const Balance = () => {
 
   useEffect(() => setAccountNos([... new Set(data.map(op => op.Conto))]), [data])
 
-  useEffect(() => setAccountData(data.filter(op => op.Conto === accountNos[0])), [accountNos])
+  useEffect(() => {
+    setAccountData(data.filter(op => op.Conto === accountNos[0]))
+    setSelectedAccount(accountNos[0])
+  }, [accountNos])
 
 
   return (
@@ -41,7 +46,15 @@ const Balance = () => {
         <div className="accountCardContainer">
           {
             accountNos.map(account => {
-              return <AccountCard key={account} account={account} accountData={data.filter(op => op.Conto === account)} filterOps={filterOps} />
+              return (
+                <AccountCard
+                  key={account}
+                  account={account}
+                  accountData={data.filter(op => op.Conto === account)}
+                  handleClick={handleClick}
+                  selectedAccount={selectedAccount}
+                />
+              )
             })
           }
         </div>

@@ -1,10 +1,13 @@
 
 
-const AccountCard = ({ account, accountData, filterOps }) => {
+const AccountCard = ({ account, accountData, handleClick, selectedAccount }) => {
 
 
   return (
-    <div className='accountCardWrapper' onClick={() => filterOps(account)}>
+    <div
+      className={selectedAccount === account ? 'accountCardWrapper active' : 'accountCardWrapper'}
+      onClick={() => handleClick(account)}
+    >
       <h3 className="accountNumber">
         ACCOUNT {account}
       </h3>
