@@ -2,6 +2,10 @@
     width: 100%;
 }
 
+.specsTable {
+    margin-bottom: 50px;
+}
+
 .specsHeadRow {
     @include flex(center, center);
     background: #F3F3F3;
@@ -61,4 +65,27 @@
 .printIcon {
     @include WxH(20px, 20px);
     color: $itvp-grey;
+}
+
+.specsShowMore {
+    @include flex(center, center);
+    cursor: pointer;
+    width: fit-content;
+}
+
+.showMoreText {
+    font-weight: 700;
+    line-height: 16px;
+    color: $itvp-grey;
+}
+
+.showIcon {
+    @include WxH(20px, 20px);
+    color: $itvp-grey;
+    margin-left: 20px;
+}
+
+.showMoreHr {
+    margin-top: 10px;
+    border: 1px solid #E0E0E0;
 }

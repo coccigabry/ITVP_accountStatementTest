@@ -254,6 +254,10 @@
   width: 100%;
 }
 
+.specsTable {
+  margin-bottom: 50px;
+}
+
 .specsHeadRow {
   display: flex;
   align-items: center;
@@ -321,6 +325,33 @@
   width: 20px;
   height: 20px;
   color: #4F4F4F;
+}
+
+.specsShowMore {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.showMoreText {
+  font-weight: 700;
+  line-height: 16px;
+  color: #4F4F4F;
+}
+
+.showIcon {
+  width: 20px;
+  height: 20px;
+  color: #4F4F4F;
+  margin-left: 20px;
+}
+
+.showMoreHr {
+  margin-top: 10px;
+  border: 1px solid #E0E0E0;
 }
 
 .chartsWrapper {
