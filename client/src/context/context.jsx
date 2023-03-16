@@ -8,7 +8,6 @@ const AuthProvider = ({ children }) => {
     const [fileImported, setFileImported] = useState(false)
 
     const login = () => setUserLogged(!userLogged)
-
     const upload = () => setFileImported(!fileImported)
 
     return (

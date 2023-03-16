@@ -1,11 +1,12 @@
 
 
-const AccountCard = () => {
+const AccountCard = ({ account, accountData, filterOps }) => {
+
 
   return (
-    <div className='accountCardWrapper'>
+    <div className='accountCardWrapper' onClick={() => filterOps(account)}>
       <h3 className="accountNumber">
-        ACCOUNT 1612660
+        ACCOUNT {account}
       </h3>
       <div className="accountBalanceContainer">
         <p className="balanceValue">

@@ -16,7 +16,6 @@ const Home = () => {
       const formData = new FormData()
       formData.append('file', file)
       const res = await axios.post('http://localhost:4000/api/account/upload', formData)
-      console.log(res.data)
       upload()
       navigate('/balance')
     } catch (err) {
@@ -39,13 +38,13 @@ const Home = () => {
       <div className="leftContainer">
         <div className="leftWrapper">
           <div className="leftText">
-            <h1 className="leftTextTitle">
-              Import your transaction file with a few clicks
-            </h1>
             {
               userLogged
                 ? (
                   <>
+                    <h1 className="leftTextTitle">
+                      Import your transaction file with a few clicks
+                    </h1>
                     <p className="leftTextDesc">
                       Upload is made easy for you.
                     </p>
@@ -61,9 +60,14 @@ const Home = () => {
                   </>
                 )
                 : (
-                  <p className="leftTextDesc">
-                    Sign in and start checking your account statements.
-                  </p>
+                  <>
+                    <h1 className="leftTextTitle">
+                      First time here?
+                    </h1>
+                    <p className="leftTextDesc">
+                      Sign in and start checking your account statements.
+                    </p>
+                  </>
                 )
             }
           </div>
