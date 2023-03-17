@@ -1,6 +1,48 @@
+import { useEffect, useState } from "react"
 
 
 const AccountCard = ({ account, accountData, handleClick, selectedAccount }) => {
+
+  const [balanceEUR, setBalanceEUR] = useState(null)
+  const [balanceUSD, setBalanceUSD] = useState(null)
+  const [lastUpdateDate, setLastUpdateDate] = useState(null)
+
+
+  const getTotal = (value) => {
+    let creditOps = []
+    let debitOps = []
+
+    const filteredByValueData = accountData.filter(op => op.Divisa === value)
+    filteredByValueData.length > 0 &&
+      filteredByValueData.forEach(op =>
+        op.Tipo === "Versamento" || op.Tipo === "Vendita"
+          ? creditOps.push(+op.Valorenetto)
+          : debitOps.push(+op.Valorenetto)
+      )
+
+    const totCreditOps = creditOps.reduce((initVal, currVal) => initVal + currVal, 0)
+    const totDebitOps = debitOps.reduce((initVal, currVal) => initVal + currVal, 0)
+    const balance = (totCreditOps - totDebitOps).toFixed(2)
+
+    return balance
+  }
+
+  const getLastUpdateDate = (account) => {
+    const filteredByAccount = accountData.filter(op => op.Conto === account)
+    const result = filteredByAccount.length > 0 &&
+      filteredByAccount.reduce((a, b) => a.Data > b.Data ? a : b);
+
+    return (result.Data)
+  }
+
+
+  useEffect(() => {
+    setBalanceEUR(getTotal('EUR'))
+    setBalanceUSD(getTotal('USD'))
+    setLastUpdateDate(getLastUpdateDate(account))
+  }, [accountData])
+
+
 
   return (
     <div
@@ -15,7 +57,7 @@ const AccountCard = ({ account, accountData, handleClick, selectedAccount }) => 
           Euro balance
         </p>
         <p className="balanceAmount">
-          €1,000,000
+          € {balanceEUR}
         </p>
       </div>
       <div className="accountBalanceContainer">
@@ -23,11 +65,11 @@ const AccountCard = ({ account, accountData, handleClick, selectedAccount }) => 
           US Dollars balance
         </p>
         <p className="balanceAmount">
-          $20,000
+          $ {balanceUSD}
         </p>
       </div>
       <div className="balanceDate">
-        31/03/2021
+        {lastUpdateDate}
       </div>
     </div>
   )
