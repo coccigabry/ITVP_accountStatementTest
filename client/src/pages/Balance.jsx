@@ -8,7 +8,7 @@ import axios from 'axios'
 const Balance = () => {
 
   const [data, setData] = useState([])
-  const [accountNos, setAccountNos] = useState([])
+  const [accountsInStatement, setAccountsInStatement] = useState([])
   const [accountData, setAccountData] = useState([])
   const [selectedAccount, setSelectedAccount] = useState(null)
 
@@ -31,12 +31,12 @@ const Balance = () => {
     fetchData()
   }, [])
 
-  useEffect(() => setAccountNos([... new Set(data.map(op => op.Conto))]), [data])
+  useEffect(() => setAccountsInStatement([... new Set(data.map(op => op.Conto))]), [data])
 
   useEffect(() => {
-    setAccountData(data.filter(op => op.Conto === accountNos[0]))
-    setSelectedAccount(accountNos[0])
-  }, [accountNos])
+    setAccountData(data.filter(op => op.Conto === accountsInStatement[0]))
+    setSelectedAccount(accountsInStatement[0])
+  }, [accountsInStatement])
 
 
   return (
@@ -45,7 +45,7 @@ const Balance = () => {
         <p className="balanceTitle">YOUR BALANCE</p>
         <div className="accountCardContainer">
           {
-            accountNos.map(account => {
+            accountsInStatement.map(account => {
               return (
                 <AccountCard
                   key={account}

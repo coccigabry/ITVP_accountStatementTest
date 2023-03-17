@@ -2,7 +2,6 @@
 
 const AccountCard = ({ account, accountData, handleClick, selectedAccount }) => {
 
-
   return (
     <div
       className={selectedAccount === account ? 'accountCardWrapper active' : 'accountCardWrapper'}

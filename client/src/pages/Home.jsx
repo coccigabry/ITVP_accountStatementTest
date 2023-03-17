@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import HomeImg from '../assets/Illustration.png'
 import { AuthContext } from '../context/context'
@@ -7,30 +7,23 @@ import { AuthContext } from '../context/context'
 
 const Home = () => {
 
-  const { userLogged, upload, fileImported } = useContext(AuthContext)
+  const { isUserLogged, importFile } = useContext(AuthContext)
   const [file, setFile] = useState(null)
   const navigate = useNavigate()
 
-  const handleUpload = async () => {
+
+  const handleUpload = async (e) => {
+    setFile(e.target.files[0])
     try {
       const formData = new FormData()
       formData.append('file', file)
-      const res = await axios.post('http://localhost:4000/api/account/upload', formData)
-      upload()
+      await axios.post('http://localhost:4000/api/account/upload', formData)
+      importFile()
       navigate('/balance')
     } catch (err) {
       console.error(err)
     }
   }
-
-  const handleFile = (e) => {
-    setFile(e.target.files[0])
-    handleUpload()
-  }
-
-  useEffect(() => {
-    if (fileImported) upload()
-  }, [])
 
 
   return (
@@ -39,7 +32,7 @@ const Home = () => {
         <div className="leftWrapper">
           <div className="leftText">
             {
-              userLogged
+              isUserLogged
                 ? (
                   <>
                     <h1 className="leftTextTitle">
@@ -55,7 +48,7 @@ const Home = () => {
                         </svg>
                         <span>IMPORT</span>
                       </label>
-                      <input style={{ display: 'none' }} type="file" id="file" accept=".csv" onChange={handleFile} />
+                      <input style={{ display: 'none' }} type="file" id="file" accept=".csv" onChange={handleUpload} />
                     </form>
                   </>
                 )

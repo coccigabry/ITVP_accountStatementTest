@@ -5,7 +5,9 @@ import { AuthContext } from '../context/context'
 
 
 const Header = () => {
-  const { userLogged, login } = useContext(AuthContext)
+
+  const { isUserLogged, login } = useContext(AuthContext)
+
 
   return (
     <div className='headerContainer'>
@@ -35,7 +37,7 @@ const Header = () => {
       </div>
       <div className='headerLoginContainer'>
         {
-          userLogged
+          isUserLogged
             ? <div className='headerUserLogged'>
               <span className='headerUserName'>WELCOME, JO</span>
               <div className='headerUserImg'></div>

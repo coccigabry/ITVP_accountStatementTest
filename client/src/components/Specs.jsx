@@ -5,7 +5,9 @@ const Specs = () => {
 
   const [showMore, setShowMore] = useState(true)
 
+
   const handleShowMore = () => setShowMore(!showMore)
+
 
   if (showMore) return (
     <div className='specsWrapper'>
