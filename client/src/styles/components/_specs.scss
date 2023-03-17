@@ -1,5 +1,5 @@
 .specsWrapper {
-    width: 100%;
+    @include WxH(100%, auto);
 }
 
 .specsTable {
