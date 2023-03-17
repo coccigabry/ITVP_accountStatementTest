@@ -1,24 +1,54 @@
-import { createContext, useState } from "react";
+import { createContext, useContext, useReducer } from "react"
+import axios from 'axios'
+import reducer from "./reducer"
 
 
-const AuthContext = createContext()
+const INITIAL_STATE = {
+    isUserLogged: false,
+    isFileImported: false,
+    data: []
+}
 
 
-const AuthProvider = ({ children }) => {
-
-    const [isUserLogged, setIsUserLogged] = useState(false)
-    const [isFileImported, setIsFileImported] = useState(false)
+const AppContext = createContext()
 
 
-    const login = () => setIsUserLogged(true)
-    const importFile = () => setIsFileImported(true)
+const AppProvider = ({ children }) => {
+
+    const [state, dispatch] = useReducer(reducer, INITIAL_STATE)
+
+
+    // reduce functions
+    const login = () => dispatch({ type: 'LOGIN' })
+
+    const importFile = () => dispatch({ type: 'IMPORT_FILE' })
+
+    const fetchData = async () => {
+        try {
+            const res = await axios.get('http://localhost:4000/api/account/retrieve')
+            const fetchedData = res.data
+            dispatch({ type: 'FETCH_DATA', payload: fetchedData })
+        } catch (err) {
+            console.error(err)
+        }
+    }
 
 
     return (
-        <AuthContext.Provider value={{ isUserLogged, login, isFileImported, importFile }}>
+        <AppContext.Provider value={{
+            ...state,
+            login,
+            importFile,
+            fetchData
+        }}>
             {children}
-        </AuthContext.Provider>
+        </AppContext.Provider>
     )
 }
 
-export { AuthContext, AuthProvider }
+export const useGlobalContext = () => {
+    return useContext(AppContext)
+}
+
+
+export { AppContext, AppProvider }

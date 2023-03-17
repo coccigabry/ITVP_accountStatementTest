@@ -1,12 +1,11 @@
-import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import Logo from '../assets/Logo_senza payoff 1.png'
-import { AuthContext } from '../context/context'
+import { useGlobalContext } from '../context/context'
 
 
 const Header = () => {
 
-  const { isUserLogged, login } = useContext(AuthContext)
+  const { isUserLogged, login } = useGlobalContext()
 
 
   return (

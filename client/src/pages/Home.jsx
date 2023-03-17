@@ -1,13 +1,13 @@
-import axios from 'axios'
-import { useContext, useState } from 'react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useGlobalContext } from '../context/context'
+import axios from 'axios'
 import HomeImg from '../assets/Illustration.png'
-import { AuthContext } from '../context/context'
 
 
 const Home = () => {
 
-  const { isUserLogged, importFile } = useContext(AuthContext)
+  const { isUserLogged, importFile } = useGlobalContext()
   const [file, setFile] = useState(null)
   const navigate = useNavigate()
 

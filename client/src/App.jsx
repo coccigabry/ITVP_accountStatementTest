@@ -2,11 +2,10 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import Layout from './components/Layout'
 import Home from './pages/Home'
 import Balance from './pages/Balance'
-import { useContext } from 'react'
-import { AuthContext } from './context/context'
+import { useGlobalContext } from './context/context'
 
 function App() {
-  const { isUserLogged, isFileImported } = useContext(AuthContext)
+  const { isUserLogged, isFileImported } = useGlobalContext()
 
   return (
     <BrowserRouter>

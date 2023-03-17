@@ -1,13 +1,13 @@
+import { useEffect, useState } from 'react'
+import { useGlobalContext } from '../context/context'
 import AccountCard from '../components/AccountCard'
 import Specs from '../components/Specs'
 import Charts from '../components/Charts'
-import { useEffect, useState } from 'react'
-import axios from 'axios'
 
 
 const Balance = () => {
 
-  const [data, setData] = useState([])
+  const { data, fetchData } = useGlobalContext()
   const [accountsInStatement, setAccountsInStatement] = useState([])
   const [accountData, setAccountData] = useState([])
   const [selectedAccount, setSelectedAccount] = useState(null)
@@ -19,17 +19,8 @@ const Balance = () => {
     setSelectedAccount(account)
   }
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const res = await axios.get('http://localhost:4000/api/account/retrieve')
-        setData(res.data)
-      } catch (err) {
-        console.error(err)
-      }
-    }
-    fetchData()
-  }, [])
+
+  useEffect(() => fetchData(), [])
 
   useEffect(() => setAccountsInStatement([... new Set(data.map(op => op.Conto))]), [data])
 
