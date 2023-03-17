@@ -53,8 +53,8 @@ const Balance = () => {
           <Specs accountData={accountData} />
         </div>
         <div className="ChartsContainer">
-          {/*           <Charts accountData={accountData} chartType={line} />
-          <Charts accountData={accountData} chartType={pie} /> */}
+          <Charts accountData={accountData} chartType="line" />
+          <Charts accountData={accountData} chartType="pie" />
         </div>
       </div>
     </div>
