@@ -20,7 +20,7 @@ const Balance = () => {
   }
 
 
-  useEffect(() => fetchData(), [])
+  useEffect(() => { fetchData() }, [])
 
   useEffect(() => setAccountsInStatement([... new Set(data.map(op => op.Conto))]), [data])
 
@@ -53,7 +53,8 @@ const Balance = () => {
           <Specs accountData={accountData} />
         </div>
         <div className="ChartsContainer">
-          <Charts accountData={accountData} />
+          {/*           <Charts accountData={accountData} chartType={line} />
+          <Charts accountData={accountData} chartType={pie} /> */}
         </div>
       </div>
     </div>

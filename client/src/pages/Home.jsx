@@ -1,13 +1,13 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useGlobalContext } from '../context/context'
 import axios from 'axios'
+import { useGlobalContext } from '../context/context'
 import HomeImg from '../assets/Illustration.png'
 
 
 const Home = () => {
 
-  const { isUserLogged, importFile } = useGlobalContext()
+  const { isUserLogged, isFileImported, toggleIsFileImported } = useGlobalContext()
   const [file, setFile] = useState(null)
   const navigate = useNavigate()
 
@@ -18,12 +18,14 @@ const Home = () => {
       const formData = new FormData()
       formData.append('file', file)
       await axios.post('http://localhost:4000/api/account/upload', formData)
-      importFile()
+      toggleIsFileImported()
       navigate('/balance')
     } catch (err) {
       console.error(err)
     }
   }
+
+  useEffect(() => { if (isFileImported) toggleIsFileImported() }, [])
 
 
   return (

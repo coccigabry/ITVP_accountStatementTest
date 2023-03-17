@@ -21,7 +21,7 @@ const AppProvider = ({ children }) => {
     // reduce functions
     const login = () => dispatch({ type: 'LOGIN' })
 
-    const importFile = () => dispatch({ type: 'IMPORT_FILE' })
+    const toggleIsFileImported = () => dispatch({ type: 'TOGGLE_ISFILEIMPORTED' })
 
     const fetchData = async () => {
         try {
@@ -38,7 +38,7 @@ const AppProvider = ({ children }) => {
         <AppContext.Provider value={{
             ...state,
             login,
-            importFile,
+            toggleIsFileImported,
             fetchData
         }}>
             {children}
